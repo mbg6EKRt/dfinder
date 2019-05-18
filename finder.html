@@ -1,0 +1,29 @@
+<style>
+    * { font-family: Arial; }
+    input { padding:10px; font-size:16px; width:100%; background-color: #444; color: #FFF; border:0; }
+    .submit { padding: 10px 20px 10px 20px; -webkit-appearance:default-button; }
+    pre { font-family: 'Courier New', Courier, monospace; }
+    hr { background-color: #CCC; margin:0;padding:0;height:1px;line-height:1px;border:0; }
+</style>
+<table cellspacing="10" cellpadding="50" width="100%">
+    <tr>
+        <td valign="top" width="50%"><form method="POST">
+            <h3>Find Duplicates Between 2 Different Folders:</h3>
+            Any files that match by name, filesize and SHA256 hash will be deleted from the source folder.<br /><br />
+            <small>Source folder duplicate items will be deleted from:</small><br />
+            <input type="text" name="source" value="{$source}" placeholder="Source folder" /><br /><br />
+            <small>Enter the folder to look for matches:</small><br />
+            <input type="text" name="match" value="{$match}" placeholder="Match folder" /><br /><br />
+            <input type="checkbox" name="preview" value="y" style="width:auto;" checked="checked" /> Preview Mode?<br /><br />
+            <input type="submit" name="submit" value="Submit" class="submit" />
+        </form></td>
+        <td valign="top" width="50%"><form method="POST">
+            <h3>Find Duplicate Files Within A Single Folder:</h3>
+            Any two files that match based on file size and SHA256 hash will have one of them deleted. This is useful when you have multiple copies of the same file within the same folder.<br /><br />
+            <small>Enter the folder where duplicate items will be searched for:</small><br />
+            <input type="text" name="source" value="{$source}" placeholder="Source folder" /><br /><br />
+            <input type="checkbox" name="preview" value="y" style="width:auto;" checked="checked" /> Preview Mode?<br /><br />
+            <input type="submit" name="submit" value="Submit" class="submit" />
+        </form></td>
+    </tr>
+</table>
